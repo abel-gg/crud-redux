@@ -5,6 +5,9 @@ import {
   START_DOWNLOAD_PRODUCTS,
   DOWNLOAD_PRODUCTS_SUCCESS,
   DOWNLOAD_PRODUCTS_ERROR,
+  DELETE_PRODUCT,
+  DELETE_PRODUCT_SUCCESS,
+  DELETE_PRODUCT_ERROR,
 } from '../types'
 
 // Cada Reducer tiene su propio state
@@ -12,12 +15,13 @@ const initialState = {
   products: [],
   error: null,
   loading: false,
+  deleteProduct: null,
 }
 
 export default function producstReducer(state = initialState, action) {
   switch (action.type) {
-    case START_DOWNLOAD_PRODUCTS:
     case ADD_PRODUCT:
+    case START_DOWNLOAD_PRODUCTS:
       return {
         ...state,
         loading: action.payload,
@@ -28,8 +32,9 @@ export default function producstReducer(state = initialState, action) {
         loading: false,
         products: [...state.products, action.payload],
       }
-    case DOWNLOAD_PRODUCTS_ERROR:
     case ADD_PRODUCT_ERROR:
+    case DELETE_PRODUCT_ERROR:
+    case DOWNLOAD_PRODUCTS_ERROR:
       return {
         ...state,
         loading: false,
@@ -41,6 +46,19 @@ export default function producstReducer(state = initialState, action) {
         loading: false,
         error: null,
         products: action.payload,
+      }
+    case DELETE_PRODUCT:
+      return {
+        ...state,
+        deleteProduct: action.payload,
+      }
+    case DELETE_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        products: state.products.filter(
+          (product) => product.id !== state.deleteProduct
+        ),
+        deleteProduct: null,
       }
     default:
       return state
