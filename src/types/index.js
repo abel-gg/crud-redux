@@ -1,0 +1,3 @@
+export const ADD_PRODUCT = 'ADD_PRODUCT'
+export const ADD_PRODUCT_EXIT = 'ADD_PRODUCT_EXIT'
+export const ADD_PRODUCT_ERROR = 'ADD_PRODUCT_ERROR'
