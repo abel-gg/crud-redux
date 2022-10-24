@@ -24,6 +24,61 @@
       "nombre": "Jugo de Fresa",
       "precio": "200",
       "id": 5
+    },
+    {
+      "name": "Melon 2kg",
+      "price": 220,
+      "id": 6
+    },
+    {
+      "name": "Melon 2kg",
+      "price": 200,
+      "id": 7
+    },
+    {
+      "name": "Ribeye",
+      "price": 100,
+      "id": 8
+    },
+    {
+      "name": "Jugo de Piña",
+      "price": 100,
+      "id": 9
+    },
+    {
+      "name": "Jugo de Piña",
+      "price": 100,
+      "id": 10
+    },
+    {
+      "name": "Jugo de Piña",
+      "price": 100,
+      "id": 11
+    },
+    {
+      "name": "Jugo de Piña",
+      "price": 100,
+      "id": 12
+    },
+    {
+      "name": "Jugo de Piña",
+      "price": 100,
+      "id": 13
+    },
+    {
+      "name": "Jugo de Piña",
+      "price": 100,
+      "id": 14
+    },
+    {
+      "name": "Jugo de Piña",
+      "price": 100,
+      "id": 15
+    },
+    {
+      "name": "Jugo de Piña",
+      "price": 150,
+      "id": 16
     }
   ]
 }

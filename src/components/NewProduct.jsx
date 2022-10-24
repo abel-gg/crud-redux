@@ -3,11 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 // Actions de Redux
 import { createNewProductAction } from '../actions/productsActions'
 
-const NewProduct = () => {
+const NewProduct = ({ history }) => {
   const [name, setName] = useState('')
   const [price, setPrice] = useState(0)
 
   const dispatch = useDispatch()
+
+  const loading = useSelector((state) => state.products.loading)
+  const error = useSelector((state) => state.products.error)
 
   const addProduct = (product) => dispatch(createNewProductAction(product))
 
@@ -20,6 +23,8 @@ const NewProduct = () => {
       name,
       price,
     })
+
+    history.push('/')
   }
 
   return (
@@ -40,7 +45,7 @@ const NewProduct = () => {
                   placeholder="Nombre Producto"
                   name="nombre"
                   value={name}
-                  onChange={(e) => setName(Number(e.target.value))}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div className="form-group">
@@ -51,7 +56,7 @@ const NewProduct = () => {
                   placeholder="Precio Producto"
                   name="precio"
                   value={price}
-                  onChange={(e) => setPrice(e.target.value)}
+                  onChange={(e) => setPrice(Number(e.target.value))}
                 />
               </div>
               <button
@@ -60,6 +65,12 @@ const NewProduct = () => {
                 Agregar
               </button>
             </form>
+            {loading ? <p>Cargando...</p> : null}
+            {error ? (
+              <p className="alert alert-danger p2 mt-4 text-center text-uppercase font-weight-bold">
+                Hubo un error
+              </p>
+            ) : null}
           </div>
         </div>
       </div>
