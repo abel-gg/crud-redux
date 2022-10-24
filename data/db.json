@@ -2,27 +2,27 @@
   "productos": [
     {
       "id": 1,
-      "nombre": "Jugo de Zanahoria",
-      "precio": "31111"
+      "name": "Jugo de Zanahoria",
+      "price": "310"
     },
     {
       "id": 2,
-      "nombre": "Jugo de Naranja",
-      "precio": "1"
+      "name": "Jugo de Naranja",
+      "price": "150"
     },
     {
-      "nombre": "Jugo de Naranja",
-      "precio": "300",
+      "name": "Jugo de Limon",
+      "price": "300",
       "id": 3
     },
     {
-      "nombre": "Rib Eye 800g",
-      "precio": "200",
+      "name": "Rib Eye 800g",
+      "price": "200",
       "id": 4
     },
     {
-      "nombre": "Jugo de Fresa",
-      "precio": "200",
+      "name": "Jugo de Fresa",
+      "price": "200",
       "id": 5
     },
     {
@@ -31,54 +31,9 @@
       "id": 6
     },
     {
-      "name": "Melon 2kg",
-      "price": 200,
+      "name": "Jugo de Piña",
+      "price": 100,
       "id": 7
-    },
-    {
-      "name": "Ribeye",
-      "price": 100,
-      "id": 8
-    },
-    {
-      "name": "Jugo de Piña",
-      "price": 100,
-      "id": 9
-    },
-    {
-      "name": "Jugo de Piña",
-      "price": 100,
-      "id": 10
-    },
-    {
-      "name": "Jugo de Piña",
-      "price": 100,
-      "id": 11
-    },
-    {
-      "name": "Jugo de Piña",
-      "price": 100,
-      "id": 12
-    },
-    {
-      "name": "Jugo de Piña",
-      "price": 100,
-      "id": 13
-    },
-    {
-      "name": "Jugo de Piña",
-      "price": 100,
-      "id": 14
-    },
-    {
-      "name": "Jugo de Piña",
-      "price": 100,
-      "id": 15
-    },
-    {
-      "name": "Jugo de Piña",
-      "price": 150,
-      "id": 16
     }
   ]
 }
