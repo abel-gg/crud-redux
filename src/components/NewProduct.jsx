@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 // Actions de Redux
 import { createNewProductAction } from '../actions/productsActions'
 
@@ -8,6 +9,8 @@ const NewProduct = ({ history }) => {
   const [price, setPrice] = useState(0)
 
   const dispatch = useDispatch()
+
+  const navigate = useNavigate()
 
   const loading = useSelector((state) => state.products.loading)
   const error = useSelector((state) => state.products.error)
@@ -24,7 +27,7 @@ const NewProduct = ({ history }) => {
       price,
     })
 
-    history.push('/')
+    navigate('/')
   }
 
   return (
@@ -43,7 +46,7 @@ const NewProduct = ({ history }) => {
                   type="text"
                   className="form-control"
                   placeholder="Nombre Producto"
-                  name="nombre"
+                  name="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -54,7 +57,7 @@ const NewProduct = ({ history }) => {
                   type="number"
                   className="form-control"
                   placeholder="Precio Producto"
-                  name="precio"
+                  name="price"
                   value={price}
                   onChange={(e) => setPrice(Number(e.target.value))}
                 />

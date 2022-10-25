@@ -8,6 +8,9 @@ import {
   DELETE_PRODUCT,
   DELETE_PRODUCT_SUCCESS,
   DELETE_PRODUCT_ERROR,
+  EDIT_PRODUCT,
+  EDIT_PRODUCT_SUCCESS,
+  EDIT_PRODUCT_ERROR,
 } from '../types'
 
 // Cada Reducer tiene su propio state
@@ -16,6 +19,7 @@ const initialState = {
   error: null,
   loading: false,
   deleteProduct: null,
+  editProduct: null,
 }
 
 export default function producstReducer(state = initialState, action) {
@@ -35,6 +39,7 @@ export default function producstReducer(state = initialState, action) {
     case ADD_PRODUCT_ERROR:
     case DELETE_PRODUCT_ERROR:
     case DOWNLOAD_PRODUCTS_ERROR:
+    case EDIT_PRODUCT_ERROR:
       return {
         ...state,
         loading: false,
@@ -59,6 +64,21 @@ export default function producstReducer(state = initialState, action) {
           (product) => product.id !== state.deleteProduct
         ),
         deleteProduct: null,
+      }
+    case EDIT_PRODUCT:
+      return {
+        ...state,
+        editProduct: action.payload,
+      }
+    case EDIT_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        products: state.products.map((product) =>
+          product.id === action.payload.id
+            ? (product = action.payload)
+            : product
+        ),
+        editProduct: null,
       }
     default:
       return state
