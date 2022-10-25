@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 // Actions de Redux
 import { createNewProductAction } from '../actions/productsActions'
-import { showAlert } from '../actions/alertActions'
+import { showAlertAction, hideAlertAction } from '../actions/alertActions'
 
 const NewProduct = () => {
   const [name, setName] = useState('')
@@ -26,9 +26,12 @@ const NewProduct = () => {
         msg: 'Ambos campos son obligatorios',
         classes: 'alert alert-danger text-center text-uppercase p3',
       }
-      dispatch(showAlert(alert))
+      dispatch(showAlertAction(alert))
       return
     }
+
+    dispatch(hideAlertAction())
+
     addProduct({
       name,
       price,

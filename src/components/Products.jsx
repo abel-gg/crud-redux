@@ -10,6 +10,7 @@ const Products = () => {
   useEffect(() => {
     const getProducts = () => dispatch(getProductsAction())
     getProducts()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const products = useSelector((state) => state.products.products)
